@@ -1,0 +1,46 @@
+Create an vite project with vite-  npm create vite@latest
+Add tailwind to it after cd to project directy make sure you use v3 of tailwind - npm install -D tailwindcss@3 postcss autoprefixer
+Initailase tailwind - npx tailwindcss init -p
+tailwind config file should look something like this - export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+
+
+ts config.json should look something like this - {
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src"]
+}
+
+
+If you get error remove referneces from tsconfig.json
+if using Aceternity UI- make sure you install motion by- npm install motion
+
+NOW TO INTEGRATE CLERK FOR AUTH----
+first run - npm install @clerk/clerk-react
+follow this https://clerk.com/docs/react/getting-started/quickstart
+more than likely that if there is an issues ther is something you are doing wrong like installing wrong package or some mistake in files like tsconfig files and vite config files.
+-- to move user from one screen to another you can define all the route is app.tsx and if you want to do it with clerk you can use the forceRedirectUrl="/Dashboard" or if by on click button             onClick={() => (window.location.href = "/Dashboard")}.
+
+
+
